@@ -1,0 +1,1 @@
+Sitemap: https://hubot.github.com/sitemap.xml

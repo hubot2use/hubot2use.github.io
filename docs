@@ -1,0 +1,305 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="/assets/stylesheets/application.css?v=440c54fb1ef374e620dc46a839210a6f3dc6c4e0">
+    <meta name="viewport" content="initial-scale=1">
+
+    <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Getting Started With Hubot | HUBOT</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Getting Started With Hubot" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Hubot is your friendly robot sidekick. Install him in your company to dramatically improve employee efficiency." />
+<meta property="og:description" content="Hubot is your friendly robot sidekick. Install him in your company to dramatically improve employee efficiency." />
+<link rel="canonical" href="https://hubot.github.com/docs/" />
+<meta property="og:url" content="https://hubot.github.com/docs/" />
+<meta property="og:site_name" content="HUBOT" />
+<script type="application/ld+json">
+{"headline":"Getting Started With Hubot","@type":"WebPage","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://hubot.github.com/assets/images/screenshots/dangerroom-full.png"}},"url":"https://hubot.github.com/docs/","description":"Hubot is your friendly robot sidekick. Install him in your company to dramatically improve employee efficiency.","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+
+<body class="docs">
+    <div class="container">
+        <header class="clearfix">
+            <a href="/"><div class="hubot-avatar">
+                <img src="/assets/images/layout/hubot-avatar@2x.png" alt="hubot logo" class="hubot-avatar-img" width="106" />
+            </div></a>
+            <h1>Hubot Documentation</h1>
+        </header>
+        <section class="main clearfix">
+            <nav class="docs-nav">
+  <ul class="docs-list">
+    
+      
+      
+      <li>
+        <a class="docs-link current" href="/docs/">Overview</a>
+        
+      </li>
+    
+      
+      
+      <li>
+        <a class="docs-link " href="/docs/scripting/">Scripting</a>
+        
+      </li>
+    
+      
+      
+      <li>
+        <a class="docs-link " href="/docs/patterns/">Patterns</a>
+        
+      </li>
+    
+      
+      
+      <li>
+        <a class="docs-link " href="/docs/adapters/">Adapters</a>
+        
+        <ul class="subnav">
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/adapters/campfire/" class="docs-link ">Campfire</a>
+            </li>
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/adapters/shell/" class="docs-link ">Shell</a>
+            </li>
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/adapters/development/" class="docs-link ">Development</a>
+            </li>
+          
+        </ul>
+        
+      </li>
+    
+      
+      
+      <li>
+        <a class="docs-link " href="/docs/deploying/">Deploying</a>
+        
+        <ul class="subnav">
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/deploying/heroku/" class="docs-link ">Heroku</a>
+            </li>
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/deploying/unix/" class="docs-link ">Unix</a>
+            </li>
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/deploying/windows/" class="docs-link ">Windows</a>
+            </li>
+          
+
+          
+          
+            <li class="subpage">
+              <a href="/docs/deploying/azure/" class="docs-link ">Azure</a>
+            </li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+            <section class="about docs-content">
+                <h2 id="getting-started-with-hubot">Getting Started With Hubot</h2>
+
+<p>You will need <a href="https://docs.npmjs.com/getting-started/installing-node">node.js and npm</a>. Once those are installed, we can install the hubot generator:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>%  npm install -g yo generator-hubot
+</code></pre></div></div>
+
+<p>This will give us the <code class="language-plaintext highlighter-rouge">hubot</code> <a href="http://yeoman.io/">yeoman</a> generator. Now we
+can make a new directory, and generate a new instance of hubot in it. For example, if
+we wanted to make a bot called myhubot:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% mkdir myhubot
+% cd myhubot
+% yo hubot
+</code></pre></div></div>
+
+<p>At this point, you’ll be asked a few questions about who is creating the bot,
+and which <a href="/docs/adapters/">adapter</a> you’ll be using. Adapters are hubot’s
+way of integrating with different chat providers.</p>
+
+<p>If you are using git, the generated directory includes a .gitignore, so you can
+initialize and add everything:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% git init
+% git add .
+% git commit -m "Initial commit"
+</code></pre></div></div>
+
+<p>If you’d prefer to automate your hubot build without being interactively
+prompted for its configuration, you can add the following options
+to the <code class="language-plaintext highlighter-rouge">yo hubot</code> command to do so:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Option</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">--owner="Bot Wrangler &lt;bw@example.com&gt;"</code></td>
+      <td style="text-align: left">Bot owner, e.g. “Bot Wrangler <a href="mailto:bw@example.com">bw@example.com</a>”</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">--name="Hubot"</code></td>
+      <td style="text-align: left">Bot name, e.g. “Hubot”</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">--description="Delightfully aware robutt"</code></td>
+      <td style="text-align: left">Bot description, e.g. “Delightfully aware robutt”</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">--adapter=campfire</code></td>
+      <td style="text-align: left">Bot adapter, e.g. “campfire”</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="language-plaintext highlighter-rouge">--defaults</code></td>
+      <td style="text-align: left">Declare all defaults are set and no prompting required</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You now have your own functional hubot! There’s a <code class="language-plaintext highlighter-rouge">bin/hubot</code>
+command for convenience, to handle installing npm dependencies, loading scripts,
+and then launching your hubot.</p>
+
+<p>Hubot needs Redis to persist data, so before you can start hubot on your own computer, you should have Redis installed on your localhost. If just want to test Hubot without Redis, then you can remove <code class="language-plaintext highlighter-rouge">hubot-redis-brain</code> from <code class="language-plaintext highlighter-rouge">external-scripts.json</code>.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% bin/hubot
+Hubot&gt;
+</code></pre></div></div>
+
+<p>This starts hubot using the <a href="/docs/adapters/shell/">shell adapter</a>, which
+is mostly useful for development. Make note of  <code class="language-plaintext highlighter-rouge">Hubot&gt;</code>; this is the name your hubot will
+<code class="language-plaintext highlighter-rouge">respond</code> to with commands. For example, to list available commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% bin/hubot
+hubot&gt; hubot help
+hubot adapter - Reply with the adapter
+hubot animate me &lt;query&gt; - The same thing as `image me`, except adds a few parameters to try to return an animated GIF instead.
+hubot echo &lt;text&gt; - Reply back with &lt;text&gt;
+hubot help - Displays all of the help commands that hubot knows about.
+hubot help &lt;query&gt; - Displays all help commands that match &lt;query&gt;.
+hubot image me &lt;query&gt; - The Original. Queries Google Images for &lt;query&gt; and returns a random top result.
+hubot map me &lt;query&gt; - Returns a map view of the area returned by `query`.
+hubot mustache me &lt;query&gt; - Searches Google Images for the specified query and mustaches it.
+hubot mustache me &lt;url&gt; - Adds a mustache to the specified URL.
+hubot ping - Reply with pong
+hubot pronounce &lt;phrase&gt; in &lt;language&gt; - Provides pronunciation of &lt;phrase&gt; (&lt;language&gt; is optional)
+hubot pug bomb N - get N pugs
+hubot pug me - Receive a pug
+hubot the rules - Make sure hubot still knows the rules.
+hubot time - Reply with current time
+hubot translate me &lt;phrase&gt; - Searches for a translation for the &lt;phrase&gt; and then prints that bad boy out.
+hubot translate me from &lt;source&gt; into &lt;target&gt; &lt;phrase&gt; - Translates &lt;phrase&gt; from &lt;source&gt; into &lt;target&gt;. Both &lt;source&gt; and &lt;target&gt; are optional
+hubot youtube me &lt;query&gt; - Searches YouTube for the query and returns the video embed link.
+ship it - Display a motivation squirrel
+</code></pre></div></div>
+
+<p>You almost definitely will want to change your hubot’s name to add character. bin/hubot takes a <code class="language-plaintext highlighter-rouge">--name</code>:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>% bin/hubot --name myhubot
+myhubot&gt;
+</code></pre></div></div>
+
+<p>Your hubot will now respond as <code class="language-plaintext highlighter-rouge">myhubot</code>. This is
+case-insensitive, and can be prefixed with <code class="language-plaintext highlighter-rouge">@</code> or suffixed with <code class="language-plaintext highlighter-rouge">:</code>. These are equivalent:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>MYHUBOT help
+myhubot help
+@myhubot help
+myhubot: help
+</code></pre></div></div>
+
+<h2 id="scripts">Scripts</h2>
+
+<p>Hubot’s power comes through scripts. There are hundreds of scripts written and maintained by the community. Find them by searching the <a href="https://www.npmjs.com/browse/keyword/hubot-scripts">NPM registry</a> for <code class="language-plaintext highlighter-rouge">hubot-scripts &lt;your-search-term&gt;</code>. For example:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ npm search hubot-scripts github
+NAME                  DESCRIPTION
+hubot-deployer        Giving Hubot the ability to deploy GitHub repos to PaaS providers hubot hubot-scripts hubot-gith
+hubot-gh-release-pr   A hubot script to create GitHub's PR for release
+hubot-github          Giving Hubot the ability to be a vital member of your github organization
+…
+</code></pre></div></div>
+
+<p>To use a script from an NPM package:</p>
+
+<ol>
+  <li>Run <code class="language-plaintext highlighter-rouge">npm install --save &lt;package-name&gt;</code> to add the package as a dependency and install it.</li>
+  <li>Add the package to <code class="language-plaintext highlighter-rouge">external-scripts.json</code>.</li>
+  <li>Run <code class="language-plaintext highlighter-rouge">npm home &lt;package-name&gt;</code> to open a browser window for the homepage of the script, where you can find more information about configuring and installing the script.</li>
+</ol>
+
+<p>You can also put your own scripts under the <code class="language-plaintext highlighter-rouge">scripts/</code> directory. All scripts placed there are automatically loaded and ready to use with your hubot. Read more about customizing hubot by <a href="/docs/scripting/">writing your own scripts</a>.</p>
+
+<h2 id="adapters">Adapters</h2>
+
+<p>Hubot uses the adapter pattern to support multiple chat-backends. Here is a <a href="/docs/adapters/">list of available adapters</a>, along with details on how to configure them.</p>
+
+<h2 id="deploying">Deploying</h2>
+
+<p>You can deploy hubot to Heroku, which is the officially supported method.
+Additionally you are able to deploy hubot to a UNIX-like system or Windows.
+Please note the support for deploying to Windows isn’t officially supported.</p>
+
+<ul>
+  <li><a href="/docs/deploying/heroku/">Deploying Hubot onto Heroku</a></li>
+  <li><a href="/docs/deploying/unix/">Deploying Hubot onto UNIX</a></li>
+  <li><a href="/docs/deploying/windows/">Deploying Hubot onto Windows</a></li>
+</ul>
+
+<h2 id="patterns">Patterns</h2>
+
+<p>Using custom scripts, you can quickly customize Hubot to be the most life embettering robot he or she can be. Read <a href="/docs/patterns/">docs/patterns.md</a> for some nifty tricks that may come in handy as you teach your hubot new skills.</p>
+
+            </section>
+        </section>
+    </div>
+
+    <footer class="footer clearfix">
+        <a class="left" href="/"><span class="mega-icon mega-icon-invertocat"></span></a>
+        <p class="right">Built with <3 by <a href="http://www.github.com">GitHub, Inc.</a></p>
+        <nav class="footer-nav">
+            <a href="http://github.com/blog">The GitHub Blog</a>
+        </nav>
+    </footer>
+
+
+</body>
+</html>
